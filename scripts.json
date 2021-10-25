@@ -1,0 +1,7 @@
+{
+    "scripts": {
+      "start_ts": "deno run --allow-net app.ts",
+      "start_js": "deno test --allow-net app.js"
+    }
+}
+  
