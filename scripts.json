@@ -1,7 +1,8 @@
 {
     "scripts": {
       "start_ts": "deno run --allow-net app.ts",
-      "start_js": "deno run --allow-net app.js"
+      "start_js": "deno run --allow-net app.js",
+      "test":"deno run --allow-net --allow-read --allow-write ./test/commonMethods.ts"
     }
 }
   
