@@ -1,6 +1,5 @@
-import { getData, getBookObject } from "./common/commonMethods.ts";
-// 377477
+import { getDoujinBookObject } from "./common/commonMethods.ts";
 
 
-getData("https://nhentai.net/")
+getDoujinBookObject("")
 .then(x => console.log(x.html()));
