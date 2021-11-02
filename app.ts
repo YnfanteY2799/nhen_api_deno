@@ -1,5 +1,5 @@
-import { getDoujinBookObject } from "./common/commonMethods.ts";
+import {  } from "./common/commonMethods.ts";
 
 
-getDoujinBookObject("")
-.then(x => console.log(x.html()));
+// getDoujinBookObject("")
+// .then(x => console.log(x.html()));

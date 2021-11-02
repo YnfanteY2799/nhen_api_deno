@@ -5,42 +5,39 @@ async function getData( link:string ){
     try{
         const response = await (await fetch(link)).text();
         return cheerio.load( response );
-    }catch(e){
+    }catch{
         console.error("Check proxy or any net Setting that you may have // Check Link");
     }
 }
 
-export default async function getDoujinBookObject( code:number|string ){
+async function _getDoujinBookObject( _code:number|string ){
 
     // Response Object variables-parts
-    const $ = await getData(`https://nhentai.net/${code}/`);
+    // const $ = await getData(`https://nhentai.net/${code}/`);
 
 }
 
-export async function getActualSeasonAnime(){
-    
-    const $ = (await getData("https://myanimelist.net/") || cheerio. );
+async function getActualSeasonAnime(){
     
     //Response Building Variables 
-    let response:object;
-
-
-    $('.widget-slide-outer ul[class$="widget-slide js-widget-slide"] li[class$="btn-anime"]').each((index:number , tag:any) => {
-
-
-        $(tag).text()
-
-
+    let response:string[] = [];
+    
+    const $ = (await getData("https://myanimelist.net/") || cheerio );
+    
+    $('.widget-slide-outer ul[class$="widget-slide js-widget-slide"] li[class$="btn-anime"]')
+    .each((_index:number , tag) => {
+       response = [...response, $(tag).text()];
     })
 
-    // $('.widget-slide-outer');
-
+    return response;
 }
 
-getActualSeasonAnime();
+(async () => console.log( await getActualSeasonAnime() ) )();
 
 
-async function GetGenericScrappingPage (link:string = "https://es.wikipedia.org/wiki/Web_scraping") {
+async function _GetGenericScrappingPage (link:string) {
+
+    link = link === "" ? "https://es.wikipedia.org/wiki/Web_scraping" : link; 
     return cheerio.load(await (await fetch(link)).text() );
 }
 
@@ -66,3 +63,12 @@ async function GetGenericScrappingPage (link:string = "https://es.wikipedia.org/
 //         e
 //     );
 // }
+
+async function _getTheDenoTests(){
+
+
+
+
+}
+
+
